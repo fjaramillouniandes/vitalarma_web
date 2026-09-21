@@ -1,0 +1,154 @@
+:root {
+  /* =========================================
+     Colores principales
+     ========================================= */
+
+  --color-primary: #4054b2;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #dee1ff;
+
+  --color-secondary: #006a67;
+  --color-secondary-container: #9cf2ed;
+
+  /* =========================================
+     Superficies y texto
+     ========================================= */
+
+  --color-white: #ffffff;
+  --color-black: #212121;
+
+  --color-surface: #fbf8ff;
+  --color-surface-container: #f0edf4;
+  --color-surface-container-high: #eae7ee;
+
+  --color-on-surface: #1b1b21;
+  --color-on-surface-variant: #46464f;
+
+  --color-outline: #777680;
+  --color-outline-variant: #c7c5d0;
+
+  /* =========================================
+     Estado success
+     ========================================= */
+
+  --color-success: #28733f;
+  --color-on-success: #ffffff;
+  --color-success-container: #abf2ba;
+  --color-on-success-container: #063819;
+
+  /* =========================================
+     Estado warning
+     ========================================= */
+
+  --color-warning: #8a4a00;
+  --color-on-warning: #ffffff;
+  --color-warning-container: #ffdcc2;
+  --color-on-warning-container: #2d1600;
+
+  /* =========================================
+     Estado error
+     ========================================= */
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #410002;
+
+  /* =========================================
+     Estado pausado
+     ========================================= */
+
+  --color-paused: #5f5e67;
+  --color-on-paused: #ffffff;
+  --color-paused-container: #e5e1e9;
+  --color-on-paused-container: #1b1b21;
+
+  /* =========================================
+     Espaciado
+     ========================================= */
+
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 40px;
+  --space-8: 48px;
+  --space-9: 64px;
+
+  /* =========================================
+     Radios
+     ========================================= */
+
+  --radius-small: 8px;
+  --radius-medium: 12px;
+  --radius-large: 16px;
+  --radius-extra-large: 24px;
+  --radius-pill: 999px;
+  --radius-circle: 50%;
+
+  /* =========================================
+     Bordes
+     ========================================= */
+
+  --border-thin: 1px;
+  --border-medium: 2px;
+
+  --border-default:
+    var(--border-thin) solid var(--color-outline-variant);
+
+  --border-emphasis:
+    var(--border-thin) solid var(--color-outline);
+
+  --border-error:
+    var(--border-medium) solid var(--color-error);
+
+  /* =========================================
+     Sombras
+     ========================================= */
+
+  --shadow-none: none;
+
+  --shadow-small:
+    0 1px 2px rgb(27 27 33 / 8%);
+
+  --shadow-medium:
+    0 2px 8px rgb(27 27 33 / 12%);
+
+  --shadow-large:
+    0 8px 24px rgb(27 27 33 / 16%);
+
+  /* =========================================
+     Opacidad
+     ========================================= */
+
+  --opacity-disabled: 0.38;
+  --opacity-muted: 0.6;
+  --opacity-overlay: 0.32;
+
+  /* =========================================
+     Tamaños de controles
+     ========================================= */
+
+  --control-height-small: 32px;
+  --control-height-medium: 40px;
+  --control-height-large: 48px;
+
+  --icon-size-small: 20px;
+  --icon-size-medium: 24px;
+  --icon-size-large: 28px;
+
+  --sidebar-width: 256px;
+  --page-max-width: 1440px;
+
+  /* =========================================
+     Transiciones
+     ========================================= */
+
+  --duration-fast: 120ms;
+  --duration-medium: 200ms;
+  --duration-slow: 300ms;
+
+  --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+}
