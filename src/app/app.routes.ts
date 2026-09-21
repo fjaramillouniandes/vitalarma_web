@@ -3,6 +3,7 @@ import { Routes } from '@angular/router';
 import { AppShell } from './layout/app-shell/app-shell';
 import { Dashboard } from './pages/dashboard/dashboard';
 import { CrearRecordatorio } from './pages/crear-recordatorio/crear-recordatorio';
+import { ConfigurarAvisos } from './pages/configurar-avisos/configurar-avisos';
 
 export const routes: Routes = [
   {
@@ -12,6 +13,10 @@ export const routes: Routes = [
       {
         path: 'hoy',
         component: Dashboard,
+      },
+      {
+        path: 'crear/avisos',
+        component: ConfigurarAvisos,
       },
       {
         path: 'crear',

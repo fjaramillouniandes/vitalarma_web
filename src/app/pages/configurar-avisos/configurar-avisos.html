@@ -1,0 +1,62 @@
+<section class="configure-alerts">
+  <header class="configure-alerts__header">
+    <h1 class="text-headline-large">Configurar avisos</h1>
+    <p class="text-body-large color-on-surface-variant">
+      Elige cuándo recibir cada aviso.
+    </p>
+  </header>
+
+  <div class="configure-alerts__divider"></div>
+
+  <form class="alerts-form" [formGroup]="formulario" (ngSubmit)="continuar()">
+    <section class="anticipation" aria-labelledby="anticipation-title">
+      <h2 id="anticipation-title" class="text-title-medium">Anticipación</h2>
+
+      <mat-button-toggle-group
+        class="anticipation__selector"
+        formControlName="anticipacion"
+        aria-label="Tiempo de anticipación"
+      >
+        @for (opcion of opciones; track opcion.value) {
+          <mat-button-toggle [value]="opcion.value">
+            <span>{{ opcion.label }}</span>
+          </mat-button-toggle>
+        }
+      </mat-button-toggle-group>
+    </section>
+
+    <section class="timeline-section" aria-labelledby="timeline-title">
+      <h2 id="timeline-title" class="text-title-medium">Cronología</h2>
+
+      <ol class="timeline">
+        <li class="timeline__item">
+          <span class="timeline__marker" aria-hidden="true"></span>
+          <span class="timeline__text text-body-large">2:00 p. m. - aviso</span>
+        </li>
+        <li class="timeline__item">
+          <span class="timeline__marker" aria-hidden="true"></span>
+          <span class="timeline__text text-body-large">3:00 p. m. - aviso</span>
+        </li>
+      </ol>
+    </section>
+
+    <div class="repeat-row">
+      <label class="repeat-row__label text-title-medium" for="repeat-alerts">
+        Repetir
+      </label>
+      <mat-slide-toggle
+        id="repeat-alerts"
+        formControlName="repetir"
+        [hideIcon]="true"
+        aria-label="Repetir avisos"
+      ></mat-slide-toggle>
+    </div>
+
+    <footer class="alerts-form__actions">
+      <button class="secondary-action" mat-stroked-button type="button" (click)="cancelar()">
+        Cancelar
+      </button>
+      <button class="primary-action" mat-flat-button type="submit">Continuar</button>
+    </footer>
+  </form>
+</section>
