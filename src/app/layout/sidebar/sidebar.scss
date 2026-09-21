@@ -8,7 +8,9 @@
 .sidebar {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
   width: 100%;
+  max-width: 100%;
   min-height: 100vh;
   padding: var(--space-5) var(--space-4);
   background: var(--color-surface);

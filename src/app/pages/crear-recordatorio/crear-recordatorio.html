@@ -1,0 +1,175 @@
+<section class="create-reminder">
+
+  <header class="create-reminder__header">
+    <h1 class="text-headline-large">
+      Crear recordatorio
+    </h1>
+
+    <p class="text-body-large color-on-surface-variant">
+      Completa la información principal.
+    </p>
+  </header>
+
+  <div class="create-reminder__divider"></div>
+
+  <form
+    class="reminder-form"
+    [formGroup]="formulario"
+    (ngSubmit)="continuar()"
+    novalidate
+  >
+    <div class="reminder-form__grid">
+
+      <div class="reminder-form__column">
+        <mat-form-field
+          class="form-field"
+          appearance="outline"
+          subscriptSizing="dynamic"
+        >
+          <mat-label>Nombre</mat-label>
+
+          <input
+            matInput
+            formControlName="nombre"
+            maxlength="60"
+            autocomplete="off"
+          >
+
+          @if (
+            nombreControl.hasError('required') &&
+            (nombreControl.touched || submitted)
+          ) {
+            <mat-error>
+              Ingrese un nombre para el recordatorio
+            </mat-error>
+          }
+
+          @if (
+            nombreControl.hasError('maxlength') &&
+            (nombreControl.touched || submitted)
+          ) {
+            <mat-error>
+              El nombre no puede superar los 60 caracteres
+            </mat-error>
+          }
+
+          @if (
+            !nombreControl.invalid ||
+            (!nombreControl.touched && !submitted)
+          ) {
+            <mat-hint>
+              Máximo 60 caracteres
+            </mat-hint>
+          }
+        </mat-form-field>
+
+        <mat-form-field
+          class="form-field"
+          appearance="outline"
+          subscriptSizing="dynamic" hideRequiredMarker
+        >
+          <mat-label>Hora</mat-label>
+
+          <input
+            matInput
+            formControlName="hora"
+            [matTimepicker]="timePicker"
+            readonly
+          >
+
+          <mat-timepicker-toggle
+            matIconSuffix
+            [for]="timePicker"
+          ></mat-timepicker-toggle>
+
+          <mat-timepicker
+            #timePicker
+          ></mat-timepicker>
+        </mat-form-field>
+
+        <section
+          class="days-section"
+          aria-labelledby="titulo-dias"
+        >
+          <h2
+            id="titulo-dias"
+            class="days-section__title text-title-medium"
+          >
+            Días
+          </h2>
+
+          <mat-button-toggle-group
+            class="days-selector"
+            formControlName="dias"
+            multiple
+            aria-label="Seleccionar días de repetición"
+          >
+            @for (dia of dias; track dia.value) {
+              <mat-button-toggle
+                class="day-toggle"
+                [value]="dia.value"
+                [attr.aria-label]="dia.name"
+              >
+                {{ dia.label }}
+              </mat-button-toggle>
+            }
+          </mat-button-toggle-group>
+        </section>
+      </div>
+
+      <div class="reminder-form__column">
+
+        <mat-form-field appearance="outline" hideRequiredMarker>
+        <mat-label>Fecha</mat-label>
+
+        <input
+            matInput
+            formControlName="fecha"
+            [matDatepicker]="datePicker"
+        />
+
+        <mat-datepicker-toggle
+            matIconSuffix
+            [for]="datePicker"
+        ></mat-datepicker-toggle>
+
+        <mat-datepicker #datePicker></mat-datepicker>
+        </mat-form-field>
+
+        <div class="repeat-row">
+          <label
+            class="repeat-row__label text-body-large"
+            for="repeat-switch"
+          >
+            Repetir semanalmente
+          </label>
+
+          <mat-slide-toggle
+            id="repeat-switch"
+            formControlName="repetir"
+            aria-label="Repetir semanalmente"
+          ></mat-slide-toggle>
+        </div>
+      </div>
+    </div>
+
+    <footer class="reminder-form__actions">
+      <button
+        class="secondary-action"
+        mat-stroked-button
+        type="button"
+        (click)="cancelar()"
+      >
+        Cancelar
+      </button>
+
+      <button
+        class="primary-action"
+        mat-flat-button
+        type="submit"
+      >
+        Continuar
+      </button>
+    </footer>
+  </form>
+</section>

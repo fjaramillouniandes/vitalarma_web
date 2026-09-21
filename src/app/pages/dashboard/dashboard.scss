@@ -41,8 +41,6 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
-  min-height: var(--control-height-large);
   padding: 0 var(--space-5);
 
   color: var(--color-on-primary) !important;
@@ -52,7 +50,6 @@
 
   font-size: var(--font-label-large-size);
   line-height: var(--font-label-large-line-height);
-  font-weight: var(--font-label-large-weight);
 
   white-space: nowrap;
   text-decoration: none;

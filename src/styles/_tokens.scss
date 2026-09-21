@@ -1,5 +1,11 @@
 :root {
   /* =========================================
+     Tipografía
+     ========================================= */
+
+  --font-family: 'Roboto', Arial, sans-serif;
+
+  /* =========================================
      Colores principales
      ========================================= */
 
@@ -139,7 +145,7 @@
   --icon-size-medium: 24px;
   --icon-size-large: 28px;
 
-  --sidebar-width: 230px;
+  --sidebar-width: 222px;
   --page-max-width: 1440px;
 
   /* =========================================
@@ -151,4 +157,5 @@
   --duration-slow: 300ms;
 
   --easing-standard: cubic-bezier(0.2, 0, 0, 1);
+
 }
