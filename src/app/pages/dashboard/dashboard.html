@@ -1,0 +1,127 @@
+<section class="dashboard">
+
+  <header class="dashboard__header">
+    <div class="dashboard__heading">
+      <h1 class="text-headline-large">
+        Hoy
+      </h1>
+
+      <p class="text-body-large color-on-surface-variant">
+        Resumen de tus recordatorios y alertas.
+      </p>
+    </div>
+
+    <a
+      class="primary-action"
+      mat-flat-button
+      routerLink="/crear"
+    >
+      Crear recordatorio
+    </a>
+  </header>
+
+  <div class="dashboard__divider"></div>
+
+  <section
+    class="dashboard__section"
+    aria-labelledby="titulo-proxima-alerta"
+  >
+    <h2
+      id="titulo-proxima-alerta"
+      class="dashboard__section-title text-title-large"
+    >
+      Próxima alerta
+    </h2>
+
+    <div class="dashboard__alert-grid">
+
+      <mat-card class="reminder-card" appearance="outlined">
+        <div
+          class="reminder-card__accent"
+          aria-hidden="true"
+        ></div>
+
+        <mat-card-content class="reminder-card__content">
+          <span class="status-pill status-pill--active">
+            Activo
+          </span>
+
+          <h3 class="reminder-card__title text-title-large">
+            Cita médica
+          </h3>
+
+          <p class="reminder-card__text text-body-large">
+            Hoy · 3:00 p. m.
+          </p>
+
+          <p class="reminder-card__text text-body-large">
+            Próxima alerta: 2:45 p. m.
+          </p>
+
+          <p class="reminder-card__support text-label-medium">
+            Avisos: 15 min y 1 hora
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <aside
+        class="warning-banner"
+        role="status"
+        aria-labelledby="warning-title"
+      >
+        <mat-icon
+          class="warning-banner__icon"
+          fontSet="material-symbols-rounded"
+          aria-hidden="true"
+        >
+          notifications_active
+        </mat-icon>
+
+        <div class="warning-banner__content">
+          <h3
+            id="warning-title"
+            class="warning-banner__title text-title-medium"
+          >
+            Advertencia
+          </h3>
+
+          <p class="warning-banner__text text-body-large">
+            Esta alarma puede quedar en silencio.
+            Activa el permiso de alarmas prioritarias.
+          </p>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section
+    class="dashboard__section"
+    aria-labelledby="titulo-estado-general"
+  >
+    <h2
+      id="titulo-estado-general"
+      class="dashboard__section-title text-title-large"
+    >
+      Estado general
+    </h2>
+
+    <div class="summary-grid">
+      @for (item of summaryItems; track item.label) {
+        <mat-card
+          class="summary-card"
+          appearance="outlined"
+        >
+          <mat-card-content class="summary-card__content">
+            <span class="summary-card__value">
+              {{ item.value }}
+            </span>
+
+            <span class="summary-card__label text-body-large">
+              {{ item.label }}
+            </span>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+</section>

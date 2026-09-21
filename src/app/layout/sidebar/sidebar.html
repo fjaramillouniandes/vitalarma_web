@@ -1,0 +1,73 @@
+<aside class="sidebar" aria-label="Navegación principal">
+  <header class="sidebar__brand">
+    <a
+      class="sidebar__brand-link"
+      routerLink="/hoy"
+      aria-label="Ir al inicio de Vitalarma"
+    >
+      <span class="sidebar__logo">VITALARMA</span>
+      <span class="sidebar__tagline">
+        Alarmas y recordatorios
+      </span>
+    </a>
+  </header>
+
+  <nav class="sidebar__navigation">
+    <mat-nav-list>
+      <a
+        class="sidebar__link"
+        mat-list-item
+        routerLink="/hoy"
+        routerLinkActive="sidebar__link--active"
+        [routerLinkActiveOptions]="{ exact: true }"
+      >
+        Inicio
+      </a>
+
+      <a
+        class="sidebar__link"
+        mat-list-item
+        routerLink="/crear"
+        routerLinkActive="sidebar__link--active"
+      >
+        Alarmas
+      </a>
+
+      <a
+        class="sidebar__link"
+        mat-list-item
+        routerLink="/pendientes"
+        routerLinkActive="sidebar__link--active"
+      >
+        Pendientes
+      </a>
+
+      <a
+        class="sidebar__link"
+        mat-list-item
+        routerLink="/calendario"
+        routerLinkActive="sidebar__link--active"
+      >
+        Calendario
+      </a>
+
+      <a
+        class="sidebar__link"
+        mat-list-item
+        routerLink="/compartidos"
+        routerLinkActive="sidebar__link--active"
+      >
+        Compartidos
+      </a>
+
+      <a
+        class="sidebar__link"
+        mat-list-item
+        routerLink="/configuracion"
+        routerLinkActive="sidebar__link--active"
+      >
+        Configuración
+      </a>
+    </mat-nav-list>
+  </nav>
+</aside>
