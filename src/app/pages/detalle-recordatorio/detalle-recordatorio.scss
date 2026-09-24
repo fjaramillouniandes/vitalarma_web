@@ -2,11 +2,6 @@
   display: block;
 }
 
-.reminder-detail {
-  width: 100%;
-  margin: 0;
-}
-
 .reminder-detail__header {
   display: flex;
   align-items: flex-start;
@@ -21,7 +16,6 @@
 }
 
 .reminder-detail__divider {
-  width: 100%;
   height: 1px;
   margin-top: var(--space-4);
   background: var(--color-outline-variant);
@@ -47,8 +41,6 @@
 .permission-card {
   min-height: 136px;
   background: var(--color-surface-container);
-  border-color: var(--color-outline-variant);
-  border-radius: var(--radius-medium);
   box-shadow: var(--shadow-none);
 }
 
@@ -57,11 +49,6 @@
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-3);
-  padding: var(--space-4);
-}
-
-.permission-card__title {
-  color: var(--color-on-surface);
 }
 
 .permission-card__text {
