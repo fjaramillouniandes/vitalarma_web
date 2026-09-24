@@ -1,0 +1,140 @@
+<section class="reminder-detail">
+
+  <header class="reminder-detail__header">
+    <div class="reminder-detail__heading">
+      <h1 class="text-headline-large">
+        Detalle del recordatorio
+      </h1>
+
+      <p class="text-body-large color-on-surface-variant">
+        Estado, programación y permisos.
+      </p>
+    </div>
+
+    <a
+      class="primary-action"
+      mat-flat-button
+      routerLink="/crear"
+    >
+      Crear recordatorio
+    </a>
+  </header>
+
+  <div class="reminder-detail__divider"></div>
+  <div class="reminder-detail__grid">
+    <div class="reminder-detail__column">
+      <mat-card class="reminder-card" appearance="outlined">
+        <div
+          class="reminder-card__accent"
+          aria-hidden="true"
+        ></div>
+
+        <mat-card-content class="reminder-card__content">
+          <span class="status-pill status-pill--active">
+            {{ recordatorio.estado }}
+          </span>
+
+          <h2 class="reminder-card__title text-title-large">
+            {{ recordatorio.titulo }}
+          </h2>
+
+          <p class="reminder-card__text text-body-large">
+            {{ recordatorio.programacion }}
+          </p>
+
+          <p class="reminder-card__text text-body-large">
+            {{ recordatorio.proximaAlerta }}
+          </p>
+
+          <p class="reminder-card__support text-label-medium">
+            {{ recordatorio.avisos }}
+          </p>
+        </mat-card-content>
+      </mat-card>
+
+      <mat-card
+        class="permission-card"
+        appearance="outlined"
+        aria-labelledby="titulo-notificaciones"
+      >
+        <mat-card-content class="permission-card__content">
+          <h2
+            id="titulo-notificaciones"
+            class="permission-card__title text-title-medium"
+          >
+            Notificaciones
+          </h2>
+
+          <p class="permission-card__text text-body-large">
+            Estado: permiso pendiente
+          </p>
+
+          <p class="permission-card__text text-body-large">
+            Actívalas para recibir avisos con la app cerrada.
+          </p>
+
+          <button
+            class="permission-card__action text-body-large"
+            type="button"
+          >
+            Permitir
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+
+    <aside
+      class="success-banner"
+      role="status"
+      aria-labelledby="titulo-sonido-garantizado"
+    >
+      <mat-icon
+        class="success-banner__icon"
+        fontSet="material-symbols-rounded"
+        aria-hidden="true"
+      >
+        check
+      </mat-icon>
+
+      <div class="success-banner__content">
+        <h2
+          id="titulo-sonido-garantizado"
+          class="success-banner__title text-title-medium"
+        >
+          Sonido garantizado
+        </h2>
+
+        <p class="success-banner__text text-body-medium">
+          No molestar está activo. Esta alarma sonará de todas
+          formas. Permiso de alarmas: activado.
+        </p>
+      </div>
+    </aside>
+  </div>
+
+  <footer class="reminder-detail__actions">
+    <button
+      class="primary-action"
+      mat-flat-button
+      type="button"
+    >
+      Completar
+    </button>
+
+    <button
+      class="secondary-action"
+      mat-stroked-button
+      type="button"
+    >
+      Posponer
+    </button>
+
+    <button
+      class="secondary-action"
+      mat-stroked-button
+      type="button"
+    >
+      Reprogramar
+    </button>
+  </footer>
+</section>

@@ -131,24 +131,6 @@
   padding-top: var(--space-8);
 }
 
-.primary-action,
-.primary-action.mat-mdc-unelevated-button {
-  padding-inline: var(--space-5);
-  color: var(--color-on-primary) !important;
-  background: var(--color-primary) !important;
-  border-radius: var(--radius-pill) !important;
-}
-
-.secondary-action,
-.secondary-action.mat-mdc-outlined-button {
-  
-  padding-inline: var(--space-5);
-  color: var(--color-on-surface) !important;
-  background: var(--color-surface);
-  border-radius: var(--radius-pill) !important;
-  --mdc-outlined-button-outline-color: var(--color-outline);
-}
-
 @media (max-width: 760px) {
   .alerts-form {
     padding-top: var(--space-7);

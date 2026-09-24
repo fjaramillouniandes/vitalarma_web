@@ -28,7 +28,7 @@
         class="sidebar__link"
         mat-list-item
         routerLink="/crear"
-        routerLinkActive="sidebar__link--active"
+        [class.sidebar__link--active]="seccionAlarmasActiva()"
       >
         Alarmas
       </a>

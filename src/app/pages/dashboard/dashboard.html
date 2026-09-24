@@ -35,34 +35,39 @@
 
     <div class="dashboard__alert-grid">
 
-      <mat-card class="reminder-card" appearance="outlined">
-        <div
-          class="reminder-card__accent"
-          aria-hidden="true"
-        ></div>
+      <a
+        class="reminder-card-link"
+        routerLink="/detalle"
+      >
+        <mat-card class="reminder-card" appearance="outlined">
+          <div
+            class="reminder-card__accent"
+            aria-hidden="true"
+          ></div>
 
-        <mat-card-content class="reminder-card__content">
-          <span class="status-pill status-pill--active">
-            Activo
-          </span>
+          <mat-card-content class="reminder-card__content">
+            <span class="status-pill status-pill--active">
+              Activo
+            </span>
 
-          <h3 class="reminder-card__title text-title-large">
-            Cita médica
-          </h3>
+            <h3 class="reminder-card__title text-title-large">
+              Cita médica
+            </h3>
 
-          <p class="reminder-card__text text-body-large">
-            Hoy · 3:00 p. m.
-          </p>
+            <p class="reminder-card__text text-body-large">
+              Hoy · 3:00 p. m.
+            </p>
 
-          <p class="reminder-card__text text-body-large">
-            Próxima alerta: 2:45 p. m.
-          </p>
+            <p class="reminder-card__text text-body-large">
+              Próxima alerta: 2:45 p. m.
+            </p>
 
-          <p class="reminder-card__support text-label-medium">
-            Avisos: 15 min y 1 hora
-          </p>
-        </mat-card-content>
-      </mat-card>
+            <p class="reminder-card__support text-label-medium">
+              Avisos: 15 min y 1 hora
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </a>
 
       <aside
         class="warning-banner"

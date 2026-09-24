@@ -1,6 +1,7 @@
 @use '@angular/material' as mat;
 @use './styles/tokens';
 @use './styles/typography';
+@use './styles/components';
 
 html {
   color-scheme: light;

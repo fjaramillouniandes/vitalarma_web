@@ -1,0 +1,103 @@
+.reminder-card,
+.reminder-card.mat-mdc-card {
+  position: relative;
+  overflow: hidden;
+  min-height: 172px;
+  background: var(--color-surface-container);
+  border-color: var(--color-outline-variant);
+  border-radius: var(--radius-medium);
+  box-shadow: var(--shadow-none);
+}
+
+.reminder-card__accent {
+  position: absolute;
+  inset: 0 0 auto;
+  height: 7px;
+  background: var(--color-secondary-container);
+}
+
+.reminder-card__content,
+.reminder-card__content.mat-mdc-card-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--space-4);
+}
+
+.reminder-card__title {
+  margin-top: var(--space-2);
+}
+
+.reminder-card__text {
+  margin-top: var(--space-1);
+  color: var(--color-on-surface-variant);
+}
+
+.reminder-card__support {
+  margin-top: var(--space-1);
+  color: var(--color-on-surface);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 32px;
+  padding-inline: var(--space-4);
+  border-radius: var(--radius-pill);
+
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-line-height);
+  font-weight: var(--font-label-large-weight);
+}
+
+.status-pill--active {
+  color: var(--color-secondary);
+  background: var(--color-secondary-container);
+}
+
+.primary-action,
+.primary-action.mat-mdc-unelevated-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 var(--space-5);
+
+  color: var(--color-on-primary) !important;
+  background-color: var(--color-primary) !important;
+  border: 0;
+  border-radius: var(--radius-pill) !important;
+
+  font-size: var(--font-label-large-size);
+  line-height: var(--font-label-large-line-height);
+
+  white-space: nowrap;
+  text-decoration: none;
+
+  --mdc-filled-button-container-color:
+    var(--color-primary);
+
+  --mdc-filled-button-label-text-color:
+    var(--color-on-primary);
+}
+
+.primary-action:hover {
+  color: var(--color-on-primary);
+  background-color: color-mix(
+    in srgb,
+    var(--color-primary) 90%,
+    var(--color-black)
+  ) !important;
+}
+
+.secondary-action,
+.secondary-action.mat-mdc-outlined-button {
+  padding-inline: var(--space-5);
+  color: var(--color-on-surface) !important;
+  background: var(--color-surface);
+  border-radius: var(--radius-pill) !important;
+  white-space: nowrap;
+
+  --mdc-outlined-button-outline-color:
+    var(--color-outline);
+}
