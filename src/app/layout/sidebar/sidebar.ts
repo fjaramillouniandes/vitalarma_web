@@ -10,7 +10,7 @@ import { MatListModule } from '@angular/material/list';
 import { filter, map } from 'rxjs';
 
 /** Pantallas que pertenecen a la sección "Alarmas". */
-const RUTAS_ALARMAS = ['/crear', '/detalle'];
+const RUTAS_ALARMAS = ['/alarmas', '/crear', '/detalle'];
 
 @Component({
   selector: 'app-sidebar',

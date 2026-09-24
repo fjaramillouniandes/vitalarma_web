@@ -24,6 +24,22 @@
   padding: var(--space-4);
 }
 
+.reminder-card__accent--overdue {
+  background: var(--color-error-container);
+}
+
+.reminder-card__accent--upcoming {
+  background: var(--color-primary-container);
+}
+
+.reminder-card__accent--paused {
+  background: var(--color-paused-container);
+}
+
+.reminder-card__accent--completed {
+  background: var(--color-success-container);
+}
+
 .reminder-card__title {
   margin-top: var(--space-2);
 }
@@ -54,6 +70,26 @@
 .status-pill--active {
   color: var(--color-secondary);
   background: var(--color-secondary-container);
+}
+
+.status-pill--overdue {
+  color: var(--color-warning);
+  background: var(--color-error-container);
+}
+
+.status-pill--upcoming {
+  color: var(--color-primary);
+  background: var(--color-primary-container);
+}
+
+.status-pill--paused {
+  color: var(--color-paused);
+  background: var(--color-paused-container);
+}
+
+.status-pill--completed {
+  color: var(--color-success);
+  background: var(--color-success-container);
 }
 
 .primary-action,

@@ -1,0 +1,103 @@
+<section class="listing">
+
+  <header class="listing__header">
+    <div class="listing__heading">
+      <h1 class="text-headline-large">
+        Alarmas
+      </h1>
+
+      <p class="text-body-large color-on-surface-variant">
+        Consulta, filtra y abre tus recordatorios.
+      </p>
+    </div>
+
+    <a
+      class="primary-action"
+      mat-flat-button
+      routerLink="/crear"
+    >
+      Crear recordatorio
+    </a>
+  </header>
+
+  <div class="listing__divider"></div>
+
+  <div class="listing__filters" [formGroup]="formulario">
+    <mat-form-field
+      class="listing__search"
+      appearance="outline"
+      subscriptSizing="dynamic"
+      floatLabel="always"
+    >
+      <mat-label>Buscar</mat-label>
+
+      <input
+        matInput
+        type="search"
+        formControlName="busqueda"
+        placeholder="Cita, medicamentos o persona"
+      />
+    </mat-form-field>
+
+    <mat-button-toggle-group
+      class="listing__chips"
+      formControlName="filtro"
+      aria-label="Filtrar alarmas"
+      hideSingleSelectionIndicator
+    >
+      @for (filtro of filtros; track filtro.value) {
+        <mat-button-toggle
+          class="listing__chip"
+          [value]="filtro.value"
+        >
+          {{ filtro.label }}
+        </mat-button-toggle>
+      }
+    </mat-button-toggle-group>
+  </div>
+
+  <section
+    class="listing__section"
+    aria-labelledby="titulo-resultados"
+  >
+    <h2
+      id="titulo-resultados"
+      class="listing__section-title text-title-large"
+    >
+      Resultados
+    </h2>
+
+    <div class="listing__grid">
+      @for (item of resultados; track item.id) {
+        <mat-card class="reminder-card" appearance="outlined">
+          <div
+            class="reminder-card__accent reminder-card__accent--{{ item.variante }}"
+            aria-hidden="true"
+          ></div>
+
+          <mat-card-content class="reminder-card__content">
+            <span class="status-pill status-pill--{{ item.variante }}">
+              {{ item.estado }}
+            </span>
+
+            <h3 class="reminder-card__title text-title-large">
+              {{ item.titulo }}
+            </h3>
+
+            <p class="reminder-card__text text-body-large">
+              {{ item.programacion }}
+            </p>
+
+            <p class="reminder-card__text text-body-large">
+              {{ item.proximaAlerta }}
+            </p>
+
+            <p class="reminder-card__support text-label-medium">
+              {{ item.avisos }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+</section>

@@ -1,0 +1,146 @@
+<section class="pending">
+
+  <header class="pending__header">
+    <div class="pending__heading">
+      <h1 class="text-headline-large">
+        Pendientes y diagnóstico
+      </h1>
+
+      <p class="text-body-large color-on-surface-variant">
+        Acciones que requieren atención.
+      </p>
+    </div>
+
+    <a
+      class="primary-action"
+      mat-flat-button
+      routerLink="/crear"
+    >
+      Crear recordatorio
+    </a>
+  </header>
+
+  <div class="pending__divider"></div>
+
+  <section
+    class="pending__section"
+    aria-labelledby="titulo-vencidos"
+  >
+    <h2
+      id="titulo-vencidos"
+      class="pending__section-title text-title-large"
+    >
+      Vencidos
+    </h2>
+
+    <div class="pending__grid">
+      @for (item of vencidos; track item.titulo) {
+        <mat-card class="reminder-card" appearance="outlined">
+          <div
+            class="reminder-card__accent reminder-card__accent--{{ item.variante }}"
+            aria-hidden="true"
+          ></div>
+
+          <mat-card-content class="reminder-card__content">
+            <span class="status-pill status-pill--{{ item.variante }}">
+              {{ item.estado }}
+            </span>
+
+            <h3 class="reminder-card__title text-title-large">
+              {{ item.titulo }}
+            </h3>
+
+            <p class="reminder-card__text text-body-large">
+              {{ item.programacion }}
+            </p>
+
+            <p class="reminder-card__text text-body-large">
+              {{ item.proximaAlerta }}
+            </p>
+
+            <p class="reminder-card__support text-label-medium">
+              {{ item.avisos }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      }
+
+      <mat-card
+        class="diagnostic-card"
+        appearance="outlined"
+        aria-labelledby="titulo-diagnostico"
+      >
+        <mat-card-content class="diagnostic-card__content">
+          <h3
+            id="titulo-diagnostico"
+            class="diagnostic-card__title text-title-medium"
+          >
+            Diagnóstico
+          </h3>
+
+          <ul class="diagnostic-card__list text-body-large">
+            @for (linea of diagnostico; track linea) {
+              <li class="diagnostic-card__item">
+                {{ linea }}
+              </li>
+            }
+          </ul>
+
+          <button
+            class="primary-action diagnostic-card__action"
+            mat-flat-button
+            type="button"
+            (click)="corregirAjustes()"
+          >
+            Corregir ajustes
+          </button>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </section>
+
+  <section
+    class="pending__section"
+    aria-labelledby="titulo-proximos"
+  >
+    <h2
+      id="titulo-proximos"
+      class="pending__section-title text-title-large"
+    >
+      Próximos
+    </h2>
+
+    <div class="pending__grid">
+      @for (item of proximos; track item.titulo) {
+        <mat-card class="reminder-card" appearance="outlined">
+          <div
+            class="reminder-card__accent reminder-card__accent--{{ item.variante }}"
+            aria-hidden="true"
+          ></div>
+
+          <mat-card-content class="reminder-card__content">
+            <span class="status-pill status-pill--{{ item.variante }}">
+              {{ item.estado }}
+            </span>
+
+            <h3 class="reminder-card__title text-title-large">
+              {{ item.titulo }}
+            </h3>
+
+            <p class="reminder-card__text text-body-large">
+              {{ item.programacion }}
+            </p>
+
+            <p class="reminder-card__text text-body-large">
+              {{ item.proximaAlerta }}
+            </p>
+
+            <p class="reminder-card__support text-label-medium">
+              {{ item.avisos }}
+            </p>
+          </mat-card-content>
+        </mat-card>
+      }
+    </div>
+  </section>
+</section>
